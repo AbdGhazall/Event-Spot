@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Concerts & Events</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body{
+            width: 100%;
+        }
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Karma", sans-serif;
+            margin: 0;
+        }
+
+        /* Additional styles for the content */
+        .w3-main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .w3-quarter {
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+            .w3-quarter img {
+                width: 100%;
+                border-radius: 8px;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+                .w3-quarter img:hover {
+                    opacity: 0.7; /* Adjust the opacity value as needed */
+                }
+
+        h1, h3 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+        .first{
+            width: 100%;
+        }
+
+        .slider {
+            width: 100%;
+            height: 510px;
+            position: relative;
+        }
+
+            .slider img {
+                width: 100%;
+                height: 500px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 20px;
+            }
+
+                .slider img:first-child {
+                    z-index: 1;
+                }
+
+                .slider img:nth-child(2) {
+                    z-index: 0;
+                }
+
+        .navigation-button {
+            text-align: center;
+            position: relative;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+
+
+.footer-dark {
+    padding: 50px 0;
+    color: black;
+    background-color: white;
+}
+
+.footer-dark h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-dark ul {
+    padding: 0;
+    list-style: none;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.footer-dark ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.footer-dark ul a:hover {
+    opacity: 0.8;
+}
+
+
+
+.footer-dark .item.text {
+    margin-bottom: 36px;
+}
+
+
+
+.footer-dark .item.text p {
+    opacity: 0.6;
+    margin-bottom: 0;
+}
+
+.footer-dark .item.social {
+    text-align: center;
+}
+
+
+
+.footer-dark .item.social > a {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+}
+
+/*/*//*/*//*/*/
+        .boxes {
+			text-align: center;
+			justify-content: center;
+		}
+
+        .container .instrument-button {
+            margin: 10px;
+        }
+
+        .instrument-button {
+            border: none;
+            padding: 40px 60px;
+            width: 250px;
+            font-size: 30px;
+            color: #eee;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            background-color: #009696;
+        }
+
+            .instrument-button span {
+                justify-content: center;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            .instrument-button::before {
+                content: '';
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                display: block;
+                opacity: 0.2;
+                border-radius: 10px;
+                background: white;
+                background-blend-mode: multiply;
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: background-size 0.3s;
+            }
+
+            .instrument-button.instrument-button--events::before {
+                background-image: url('https://gov.texas.gov/uploads/images/music/astroworld-concert-stage-fire.jpg');
+            }
+
+           
+
+            .instrument-button.instrument-button--discover::before {
+                background-image: url('https://www.vjv.com/media/tnuimf4h/treasury-landscape-petra-jordan.jpg?cc=0,0.1228378626304323,0,0.1271621373695677&width=1920&height=1080&quality=60');
+                background-size: 100%;
+                text-align: center;
+            }
+
+            .instrument-button.instrument-button--experience::before {
+                background-image: url('https://www.enicbcmed.eu/sites/default/files/styles/full_content/public/2021-08/Briefing.jpg?itok=Y4dgo7AG');
+                background-size: 100%;
+            }
+
+            .instrument-button:hover {
+                color: #fff;
+                background-color: #116d6d;
+            }
+
+                .instrument-button:hover::before {
+                    opacity: 0.3;
+                    background-size: 120%;
+                }
+
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+        <img id="img-1" src="~/img/hyatt2.jpg" alt="Image 1" />
+        <img id="img-2" src="~/img/PETRA.jpg" alt="Image 2" />
+        <img id="img-3" src="~/img/maein.jpg" alt="Image 3" />
+    </div>
+    <div class="navigation-button">
+        <span class="dot active" onclick="changeSlide(0)"></span>
+        <span class="dot" onclick="changeSlide(1)"></span>
+        <span class="dot" onclick="changeSlide(2)"></span>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-main">
+        <div class="w3-row-padding w3-padding-16 w3-center" id="events">
+            <h1>Trending Concerts</h1>
+            <div class="w3-quarter">
+                <a href="/Home/Ticket"> <img src="/img/adam.jpeg" alt="Adam Concert"></a>
+                <h3>ADAM</h3>
+                <p>The superstar “ADAM”, a memorable night for a live concert that will take you on a journey of togetherness!</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/img/hamaki.jpeg" alt="Hamaki Concert">
+                <h3>HAMAKI</h3>
+                <p>Layali Festival 2023 presents the superstar “Mohammad Hamaki” live in Amman on Thursday, the 24th of 2023.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/img/mahmoud.jpeg" alt="Mahmoud Concert">
+                <h3>MAHMOUD</h3>
+                <p>Get ready for an unforgettable night with “Mahmoud” live in concert at Amman on Friday, the 24th of 2023.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/img/silawy.jpeg" alt="Siilawy Concert">
+                <h3>SIILAWY</h3>
+                <p>Get your tickets now for an unforgettable night with the one and only “SIILAWY” on October 20th!</p>
+            </div>
+        </div>
+        <a href="/Home/Events" class="link-button">Explore More</a>
+
+        <hr />
+    </div>
+    <div class="w3-main">
+        <div class="w3-row-padding w3-padding-16 w3-center" id="events">
+            <h1>Trending Concerts</h1>
+            <div class="w3-quarter">
+                <a href="/Home/Booking"> <img src="/img/petra2.jpeg" alt="Adam Concert"></a>
+                <h3>PETRA</h3>
+                <p>It has been a UNESCO World Heritage Site since 1985. UNESCO has described Petra as "one of the most precious cultural properties of man's cultural heritage".</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/img/aqaba2.jpeg" alt="Hamaki Concert">
+                <h3>AQABA</h3>
+                <p>Aqaba is a Jordanian port city on the Red Sea's Gulf of Aqaba. Inhabited since 4000 B.C., it's home to the Islamic-era Aqaba Fort. Its beach resorts are popular for windsurfing and other water sports.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/img/roman.jpeg" alt="Mahmoud Concert">
+                <h3>DOWNTOWN</h3>
+                <p>Amman, the capital of Jordan, is a modern city with numerous ancient ruins. Atop Jabal al-Qala’a hill, the historic Citadel includes the pillars of the Roman Temple.</p>
+            </div>
+            <div class="w3-quarter">
+                <img src="/img/wadirum2.jpeg" alt="Siilawy Concert">
+                <h3>WADIRUM</h3>
+                <p>Wadi Rum is a protected desert wilderness in southern Jordan. It features dramatic sandstone mountains like the many-domed Jebel Um Ishrin, and natural arches such as Burdah Rock Bridge.</p>
+            </div>
+        </div>
+        <a href="/Home/Discover" class="link-button">Explore More</a>
+
+        <hr />
+    </div>
+    <div class="boxes">
+        <button class="instrument-button instrument-button--events">
+            <span>Events</span>
+        </button>
+
+        <button class="instrument-button instrument-button--discover">
+            <span>Discover</span>
+        </button>
+
+        <button class="instrument-button instrument-button--experience">
+            <span>Experience</span>
+        </button>
+    </div>
+    
+    <script>
+        var imgs = document.querySelectorAll('.slider img');
+        var dots = document.querySelectorAll('.dot');
+        var currentImg = 0; // index of the first image
+        const interval = 3000; // duration(speed) of the slide
+        function changeSlide(n) {
+            for (var i = 0; i < imgs.length; i++) {  /* reset */
+                imgs[i].style.opacity = 0; dots[i].className = dots[i].className.replace(' active', '');
+            } currentImg = n; imgs[currentImg].style.opacity = 1; dots[currentImg].className += ' active';
+        };
+
+    </script>
+
+
+    <div class="footer-dark">
+        <footer>
+            <hr />
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2018</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

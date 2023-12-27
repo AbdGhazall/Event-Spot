@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .login-buttons {
+            display: flex;
+            gap: 20px; /* Adjust the value to control the space between buttons */
+        }
+
+        button {
+            
+            background-color: #007BFF; /* Default background color */
+            color: #fff; /* Text color */
+            /* padding: 5px 10px; */ /* Adjust padding to control the size */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .ramzi:hover   {
+            transition: 0.9s;
+            background-color: teal;
+            
+        }
+        .button:hover{
+            transition:0.9s;
+            background-color:darkturquoise;
+        }
+
+        
+
+        .signup-button {
+            background-color: grey; /* Default background color */
+            color: #fff; /* Text color */
+            padding: 5px 10px; /* Adjust padding to control the size */
+            border: none;
+            border-radius: 15px; /* Adjust the value to control the radius */
+            cursor: pointer;
+        }
+
+            .signup-button:hover {
+                transition: 0.9s;
+                background-color: darkturquoise; /* Change to the desired hover color */
+            }
+
+        .login-button-navbar {
+            background-color: white; /* Default background color */
+            color: #fff; /* Text color */
+            padding: 5px 10px; /* Adjust padding to control the size */
+            border: none;
+            border-radius: 15px; /* Adjust the value to control the radius */
+            cursor: pointer;
+        }
+
+        .login-button-navbar:hover{
+                transition: 0.9s;
+                background-color: darkturquoise;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginButtonNavbar = document.querySelector(".login-button-navbar");
+            loginButtonNavbar.addEventListener("click", function () {
+                loginButtonNavbar.style.transition = "background-color 0.9s";
+                loginButtonNavbar.style.backgroundColor = "darkturquoise";
+            });
+        });
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TestGp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TestGp.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EventSpot</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
+                    <ul class="navbar-nav flex-grow-1">
+                        <div class="ramzi">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark gg" asp-area="" asp-controller="Home" asp-action="Events">Events</a>
+                        </li>
+                </div>
+                <div class="ramzi">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Discover">Discover Jordan</a>
+                    </li>
+                    
+                        </div>
+                <div class="ramzi">
+                        <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Experience">Experience</a>
+                        </li>
+				</div>
+                
+                    </ul>
+                    
+                    <div class="login-buttons">
+                        <a class="nav-link text-dark login-button-navbar" asp-controller="Home" asp-action="Login">Login</a>
+                    </div>
+
+                    <div class="login-buttons">
+                    <a class="nav-link text-dark signup-button" asp-controller="Home" asp-action="Register">Sign Up</a>
+                    </div>
+
+                
+                
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - TestGp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

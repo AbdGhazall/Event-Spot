@@ -1,0 +1,251 @@
+﻿@{
+    ViewData["Title"] = "Experience";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+           
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+           
+            letter-spacing: 5px;
+        }
+
+        .w3-xxlarge {
+            color: white;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between; /* Adjust alignment as needed */
+            flex-wrap: wrap; /* Allow items to wrap to the next line if the width is not enough */
+        }
+
+        .column {
+            width: calc(33.33% - 20px); /* Adjust width and margin as needed */
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 10px; /* Added margin between columns */
+            margin-bottom: 20px; /* Added margin between rows */
+        }
+
+        .text12 {
+           
+        }
+
+        .learn-more-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            color: #000; /* Change text color to black */
+            text-decoration: none;
+        }
+
+            .learn-more-btn:hover {
+                transition: 0.7s;
+                background-color: #007bff;
+                color: #fff; /* Change text color to white on hover */
+            }
+
+        .footer-dark {
+            padding: 50px 0;
+            color: black;
+            background-color: white;
+        }
+
+            .footer-dark h3 {
+                margin-top: 0;
+                margin-bottom: 12px;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            .footer-dark ul {
+                padding: 0;
+                list-style: none;
+                line-height: 1.6;
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+
+                .footer-dark ul a {
+                    color: inherit;
+                    text-decoration: none;
+                    opacity: 0.6;
+                }
+
+                    .footer-dark ul a:hover {
+                        opacity: 0.8;
+                    }
+
+
+
+            .footer-dark .item.text {
+                margin-bottom: 36px;
+            }
+
+
+
+                .footer-dark .item.text p {
+                    opacity: 0.6;
+                    margin-bottom: 0;
+                }
+
+            .footer-dark .item.social {
+                text-align: center;
+            }
+
+
+
+                .footer-dark .item.social > a {
+                    font-size: 20px;
+                    width: 36px;
+                    height: 36px;
+                    line-height: 36px;
+                    display: inline-block;
+                }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+        <img class="w3-image" src="/img/wow.jpg" alt="Hamburger Catering" width="1600" height="800">
+        <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+            <h1 class="w3-xxlarge">Experience</h1>
+        </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+        <!-- About Section -->
+        <div class="w3-row w3-padding-64" id="about">
+            <div class="w3-col m6 w3-padding-large w3-hide-small">
+                <img src="/img/Diving.jpg" class="w3-round w3-image " alt="Table Setting" width="600" height="750">
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+                <h1 class="w3-center">Scuba Diving</h1><br>
+                <p class="w3-large">We offer Diving and Snorkelling in Aqaba Located in the heart of Aqaba, Jordan, Coral Garden Diving Center is just a
+                                    few steps away from the beautiful Red Sea. Coral Garden is an authorized PADI instructor development center (#27943)
+                                    with a 5-star reputation - just take a look at our reviews on Google and TripAdvisor  </p>
+                <p class="w3-large w3-text-grey w3-hide-medium">Coral Garden combines Jordanian’s distinctive hospitality with the highest diving safety standards. 
+                                       Our Diving Instructors and Guides are experts in the underwater world we visit so you are sure to be in safe hands and have fun.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Menu Section -->
+        <div class="w3-row w3-padding-64" id="menu">
+            <div class="w3-col l6 w3-padding-large">
+                <a href="/Home/Booking">
+                    <h1 class="w3-center">Karting</h1><br></a>
+                <p class="w3-large">
+                    Karting is a form of open-wheel motorsport that involves driving small,
+                    four-wheeled vehicles known as go-karts or karts on tracks or designated karting circuits. Karts are typically powered by small,high-performance engines, and the sport 
+                    is popular for its accessibility, affordability, and the opportunity it provides for aspiring racing drivers to develop their skills.
+                </p>
+                
+            </div>
+
+            <div class="w3-col l6 w3-padding-large">
+                <img src="/img/Karting.jpg" class="w3-round w3-image " alt="Menu" style="width:100%">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="w3-row w3-padding-64" id="about">
+            <div class="w3-col m6 w3-padding-large w3-hide-small">
+                <img src="/img/phobia.jpg" class="w3-round w3-image " alt="Table Setting" width="600" height="750">
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+                <a href="/Home/Booking"><h1 class="w3-center">Escape The Room </h1></a><br>
+                <p class="w3-large">
+                    The scariest thing that can ever happen to you! Coming to phobia is something fated, but the choice remains in your hands between ESCAPING or DYING!
+                    but even dying is not the worst option because nobody rests in peace inside phobia! What you are going to see, face, and feel is not like 
+                    anything else that places alive, and it fed from your fears, your hope until its last drop! eventually it all depends on you.
+                    You can face your inner fear, can you face phobia?!
+                </p>
+                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="column">
+                <img src="/img/img1.jpg" alt="img1" style="width:100%" class="imgimg">
+                <br />
+                <br />
+                <figcaption class="text12">Petra is half-built, half-carved into the rock, and is surrounded by mountains riddled with passages and gorges. An ingenious water management system allowed extensive settlement of an essentially arid area during the Nabataean, Roman and Byzantine periods.</figcaption>
+                <br />
+                <a href="https://www.visitpetra.jo/" target="perta" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <div class="column">
+                <img src="/img/img2.jpg" alt="Forest" style="width:100%">
+                <br />
+                <br />
+                <figcaption class="text12">Jerash is considered one of the largest and most well-preserved sites of Greek and Roman architecture in the world outside Italy. And is sometimes misleadingly referred to as the "Pompeii of the Middle East" or of Asia, referring to its size, extent of excavation and level of preservation.</figcaption>
+                <br />
+                <a href="https://en.wikipedia.org/wiki/Jerash" target="jarash" class="learn-more-btn">Learn More</a>
+            </div>
+
+            <div class="column">
+                <img src="/img/img3.jpg" alt="Mountains" style="width:100%">
+                <br />
+                <br />
+                <figcaption class="text12">The 74,000-hectare property, inscribed as a mixed natural and cultural site, is situated in southern Jordan, near the border with Saudi Arabia. It features a varied desert landscape consisting of a range of narrow gorges, natural arches, towering cliffs, ramps, massive landslides and caverns.</figcaption>
+                <br />
+                <a href="https://en.wikipedia.org/wiki/Wadi_Rum" target="wadirum" class="learn-more-btn">Learn More</a>
+            </div>
+        </div>
+        <div class="footer-dark">
+            <footer>
+                <hr />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Hosting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Company Name</h3>
+                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                        </div>
+                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                    </div>
+                    <p class="copyright">Company Name © 2018</p>
+                </div>
+            </footer>
+        </div>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "booking";
+}
+@model TestGp.Models.Booking
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+</head>
+<body>
+
+    <style>
+        .input-icon {
+            position: relative;
+        }
+
+            .input-icon input {
+                padding-left: 40px;
+            }
+
+            .input-icon i {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                font-size: 18px;
+                color: #ccc;
+            }
+
+        /* Custom styling for advanced performance */
+        body {
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 30px auto;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        .form-control {
+            background-color: #f4f4f4;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0;
+        }
+
+            .form-control:focus {
+                box-shadow: none;
+                border-bottom: 1px solid #3c8dbc;
+            }
+
+        .btn-submit {
+            background-color: #3c8dbc;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+
+            .btn-submit:hover {
+                background-color: #367fa9;
+            }
+    </style>
+    <form  method="post">
+       
+        <div class="input-icon">
+           <i class="fas fa-user"></i>
+            @Html.LabelFor(m=>m.First_Name)@Html.TextBoxFor(m=>m.First_Name)
+        </div>
+        <br>
+        <div class="input-icon">
+            <i class="fas fa-user"></i>
+            @Html.LabelFor(m=>m.Last_Name)@Html.TextBoxFor(m=>m.Last_Name)
+        </div>
+        <br>
+        <div class="input-icon">
+            <i class="fas fa-phone"></i>
+           @Html.LabelFor(m=>m.PhoneNumber)@Html.TextBoxFor(m=>m.PhoneNumber)
+        </div>
+        <br>
+        <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            @Html.LabelFor(m=>m.EmailAdress)@Html.TextBoxFor(m=>m.EmailAdress)
+        </div>
+        <br>
+        <div class="input-icon">
+            <i class="fas fa-ticket-alt"></i>
+            @Html.LabelFor(m=>m.NumberOfTickets)@Html.TextBoxFor(m=>m.NumberOfTickets)
+        </div>
+        <br>
+        <button type="submit" class="btn-submit">Next</button>
+        
+    </form>
+
+
+
+
+
+</body>
+
+</html>

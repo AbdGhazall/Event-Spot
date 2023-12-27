@@ -1,0 +1,403 @@
+﻿@{
+    ViewData["Title"] = "AqabaPage";
+}
+
+
+<!doctype html>
+<html lang="en">
+
+<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <style>
+        
+        .pac1 {
+            text-align: center;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sectext {
+            font-family: URW Chancery L, cursive;
+            text-align: center;
+        }
+
+        img {
+            width: 300px;
+            height: 600px;
+            border-radius: 8px;
+        }
+
+
+        .scuba-diving-course {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .scuba-diving-experience {
+            width: 20%;
+            margin: 10px;
+            text-align: left;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+            .scuba-diving-experience img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .scuba-diving-experience h2 {
+                font-size: 24px;
+                margin-top: 10px;
+            }
+
+            .scuba-diving-experience p {
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+
+
+        .special-word {
+            color: grey;
+            font-family: Gill Sans, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            width: 140px;
+            height: 45px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+
+            .button:hover {
+                background-color: #2EE59D;
+                box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+                color: #fff;
+                transform: translateY(-7px);
+            }
+
+        .footer-dark {
+            padding: 50px 0;
+            color: black;
+            background-color: white;
+            margin-top: 100px;
+        }
+
+            .footer-dark h3 {
+                margin-top: 0;
+                margin-bottom: 12px;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            .footer-dark ul {
+                padding: 0;
+                list-style: none;
+                line-height: 1.6;
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+
+                .footer-dark ul a {
+                    color: inherit;
+                    text-decoration: none;
+                    opacity: 0.6;
+                }
+
+                    .footer-dark ul a:hover {
+                        opacity: 0.8;
+                    }
+
+
+
+            .footer-dark .item.text {
+                margin-bottom: 36px;
+            }
+
+
+
+                .footer-dark .item.text p {
+                    opacity: 0.6;
+                    margin-bottom: 0;
+                }
+
+            .footer-dark .item.social {
+                text-align: center;
+            }
+
+
+
+                .footer-dark .item.social > a {
+                    font-size: 20px;
+                    width: 36px;
+                    height: 36px;
+                    line-height: 36px;
+                    display: inline-block;
+                }
+    </style>
+    <main>
+
+        <div class="sectext">
+            <h2>Aqaba, Jordan (Trips)</h2>
+        </div>
+
+        <img src="/img/aqabawall2.jpg" alt="Aqaba" style="width:100%">
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <h2>Choose Your Trip in Aqaba !</h2>
+        <hr />
+        <br />
+        <br />
+
+        <h4 class="pac1">Packages</h4>
+
+        <section class="scuba-diving-course">
+            <div class="scuba-diving-experience">
+                <img src="~/img/hyatt2.jpg" alt="Aqaba">
+                <br />
+                <br />
+                <h6><span class='special-word'>Organization: </span> Jordan Tours</h6>
+
+                <hr />
+                <p>4 Days 3 Nights</p>
+
+                <h6><span class='special-word'>Transportation: </span> JETT bus (Amman-Aqaba)</h6>
+                <h6><span class='special-word'>Hotel: </span> Hyatt Regency Aqaba (Ayla)</h6>
+                <p>210 JD</p>
+                <div class="wrap">
+                    <!-- Use a form with the action attribute set to the destination page URL -->
+                    <form asp-controller="Home" asp-action="Booking">
+                        <button type="submit" class="button">Book Now</button>
+                    </form>
+                    
+                </div>
+            </div>
+
+
+
+
+
+            <div class="scuba-diving-experience">
+                <img src="~/img/mov.jpg" alt="Aqaba">
+                <br />
+                <br />
+                <h6><span class='special-word'>Organization: </span> Adviser Travel and Tourism</h6>
+
+                <hr />
+                <p>3 Days 2 Nights</p>
+
+                <h6><span class='special-word'>Transportation: </span> JETT bus (Amman-Aqaba)</h6>
+                <h6><span class='special-word'>Hotel: </span> Mövenpick Aqaba</h6>
+                <p>145 JD</p>
+                <div class="wrap">
+                    <button class="button">Book Now</button>
+                </div>
+            </div>
+
+
+
+
+            <div class="scuba-diving-experience">
+                <img src="~/img/cloud7.jpg" alt="Aqaba">
+                <br />
+                <br />
+                <h6><span class='special-word'>Organization: </span> Ajam Travel and Tourism	</h6>
+
+                <hr />
+                <p>3 Days 2 Nights</p>
+
+                <h6><span class='special-word'>Transportation: </span> JETT bus (Amman-Aqaba)</h6>
+                <h6><span class='special-word'>Hotel: </span> Hyatt Regency Aqaba (Ayla)</h6>
+                <p>249 JD</p>
+                <div class="wrap">
+                    <button class="button">Book Now</button>
+                </div>
+            </div>
+
+
+
+
+            <div class="scuba-diving-experience">
+                <img src="~/img/AlManara.jpg" alt="Aqaba">
+                <br />
+                <br />
+                <h6><span class='special-word'>Organization: </span> AL - Thuraya Travel & Tourism</h6>
+
+                <hr />
+                <p>2 Days 1 Nights</p>
+
+                <h6><span class='special-word'>Transportation: </span> JETT bus (Amman-Aqaba)</h6>
+                <h6><span class='special-word'>Hotel: </span> Al Manara </h6>
+                <p>126 JD</p>
+
+                <div class="wrap">
+                    <button class="button">Book Now</button>
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+
+        </section>
+
+        <h4 class="pac1">Transportation</h4>
+
+        <section class="scuba-diving-course">
+            <div class="scuba-diving-experience">
+                <img src="~/img/aqabapetra.jpg" alt="Aqaba">
+                <br />
+                <br />
+                <h6><span class='special-word'>Organization: </span> JEET Jo.</h6>
+
+                <hr />
+
+
+                <h6><span class='special-word'>Transportation: </span> JETT bus (Aqaba-Petra)</h6>
+                <h6><span class='special-word'>Flight duration:  </span> 90 Min</h6>
+                <p>15 JD</p>
+                <div class="wrap">
+                    <button class="button">Book Now</button>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="scuba-diving-experience">
+                <img src="~/img/ammaqaba.jpg" alt="Aqaba">
+                <br />
+                <br />
+                <h6><span class='special-word'>Organization: </span>JEET Jo.</h6>
+
+                <hr />
+
+
+                <h6><span class='special-word'>Transportation: </span> JETT bus (Amman-Aqaba)</h6>
+                <h6><span class='special-word'>Flight duration:  </span> 5 Hours</h6>
+                <p>15 JD</p>
+                <div class="wrap">
+                    <button class="button">Book Now</button>
+                </div>
+            </div>
+
+
+
+
+            <div class="scuba-diving-experience">
+                <img src="~/img/ammtra.jpg" alt="Aqaba">
+                <br />
+                <br />
+                <h6><span class='special-word'>Organization: </span> JEET Jo.	</h6>
+
+                <hr />
+
+
+                <h6><span class='special-word'>Transportation: </span> JETT bus (Amman-Petra)</h6>
+                <h6><span class='special-word'>Flight duration:  </span> 3 Hours</h6>
+                <p>15 JD</p>
+                <div class="wrap">
+                    <button class="button">Book Now</button>
+                </div>
+            </div>
+
+
+
+
+            <div class="scuba-diving-experience">
+                <img src="~/img/aqabawadi.png" alt="Aqaba">
+                <br />
+                <br />
+                <h6><span class='special-word'>Organization: </span> JEET Jo.</h6>
+
+                <hr />
+
+                <h6><span class='special-word'>Transportation: </span> JETT bus (Aqaba-Wadi Rum)</h6>
+                <h6><span class='special-word'>Flight duration:  </span> 75 Min</h6>
+                <p>15 JD</p>
+
+                <div class="wrap">
+                    <button class="button">Book Now</button>
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+
+        </section>
+
+
+    </main>
+    <div class="footer-dark">
+        <footer>
+            <hr />
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Company Name © 2018</p>
+            </div>
+        </footer>
+    </body>
+    </html>

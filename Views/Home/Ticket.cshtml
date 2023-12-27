@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial;
+            color: white;
+        }
+
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .left {
+            left: 0;
+            
+        }
+
+        .right {
+            right: 0;
+            
+        }
+
+        .centeredd {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+            .centeredd img {
+                width: 450px;
+               border-radius:20px;
+            }
+            p{
+                color:black;
+            }
+
+        .centered {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        
+
+        .wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            width: 140px;
+            height: 45px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+
+            .button:hover {
+                background-color: #2EE59D;
+                box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+                color: #fff;
+                transform: translateY(-7px);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="split left">
+        <div class="centeredd">
+            <img src="~/img/adam.jpeg" alt="Avatar woman">
+            
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="centered">
+            
+            <p>The superstar “ADAM”, a memorable night for a live concert that will take you on a journey of togetherness!Get your tickets now for an unforgettable night.</p>
+
+
+
+
+            <p>Adam Live in Amman on Thursday, The 3rd of August, 2023.</p>
+
+            <p>The super star Adam, a super night for live concert to scoop the crowds on a journey of togetherness in a day to remember! we all deserve this! Don't miss it!</p>
+
+            <p>The concert will take place at the EXIT Club | <strong>Amman.</strong></p>
+
+            <p> Lineup:</p>
+            <p>6:00 PM - Open Doors.</p>
+            <p> 7:00 PM - DJ.</p>
+            <p> 8:00 PM - Noel Kharman</p>
+            <p> 8:45 PM - DJ.</p>
+            <p>  9:30 PM - Adam.</p>
+            <p>  10:45 PM - DJ.</p>
+            <p>  11:00 PM - Tamer Ashour.</p>
+
+
+
+			<p>
+				* Event Organizer: Platinum Marketing & Events
+			</p>
+            
+            <p> * For inquiries: 009627999999999</p>
+
+            
+            <div class="wrap">
+                <!-- Use a form with the action attribute set to the destination page URL -->
+                <form asp-controller="Home" asp-action="Booking">
+                    <button type="submit" class="button">Book Now</button>
+                </form>
+
+            </div>
+ 
+        </div>
+    </div>
+
+</body>
+</html>
+ 
