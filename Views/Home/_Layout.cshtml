@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿
+@model TestGp.Models.Login
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
@@ -113,6 +116,26 @@
                     <a class="nav-link text-dark signup-button" asp-controller="Home" asp-action="Register">Sign Up</a>
                     </div>
 
+                   
+                    
+                        <div class="login-buttons">
+                       
+                            
+                        
+                            <form id="logoutForm" asp-controller="Home" asp-action="Logout" method="post">
+                                
+                                <button type="submit">Logout</button>
+
+                            </form>
+                        
+                    </div>
+
+
+
+            
+               
+                   
+               
                 
                 
                 </div>

@@ -8,6 +8,7 @@ namespace TestGp.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required]
+       
         public string Email {  get; set; }
         public string Password { get; set; }
     }
