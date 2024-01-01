@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "AqabaPage";
 }
-
+@model TestGp.Models.Login
 
 <!doctype html>
 <html lang="en">
@@ -191,12 +191,19 @@
 
             <ul class="logout">
                 <li>
-                    <a href="#">
+
+
+                    <a asp-controller="Home" asp-action="Logout">
                         <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
                             Logout
                         </span>
                     </a>
+
+
+
+
+
                 </li>
             </ul>
         </nav>

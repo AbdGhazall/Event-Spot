@@ -69,8 +69,9 @@ namespace TestGp.Controllers
 
             }
 
-        }
-        [HttpPost]
+        }jhjh
+      
+       
         public IActionResult Logout()
         {
             if (HttpContext.Session.Keys.Any())
@@ -81,8 +82,9 @@ namespace TestGp.Controllers
             }
             else {
                 TempData["log outt"] = "logout feild";
-                return RedirectToAction("Index");
-            }
+                //return RedirectToAction("Index");
+  
+            } return RedirectToAction("Index");
          
         }
        
@@ -145,8 +147,20 @@ namespace TestGp.Controllers
             
         }
 
-     
-       
+
+
+        public IActionResult Addevent()
+        {
+            return View();
+        }
+        public IActionResult Orgnizerpage()
+        {
+            return View();
+        }
+        public IActionResult Dasboard()
+        {
+            return View();
+        }
 
 
         public IActionResult Discover()
