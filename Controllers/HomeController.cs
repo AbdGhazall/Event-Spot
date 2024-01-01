@@ -69,7 +69,7 @@ namespace TestGp.Controllers
 
             }
 
-        }jhjh
+        }
       
        
         public IActionResult Logout()
