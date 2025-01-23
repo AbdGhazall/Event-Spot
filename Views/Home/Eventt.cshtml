@@ -1,0 +1,205 @@
+﻿
+@model List<Event>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+    <style>
+        .slider {
+            width: 100%;
+            height: 510px;
+            position: relative;
+        }
+
+            .slider img {
+                width: 100%;
+                height: 700px;
+                position: absolute;
+                border-radius: 20px;
+            }
+
+      
+        /* Additional styles for the content */
+        .w3-main {
+         
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            margin-top: 250px;
+        }
+
+        .w3-quarter {
+            margin-bottom: 16px;
+            text-align: center;
+            transform: scale(1.1);
+            padding: 30px;
+            width: 25%; /* Adjust this value based on your layout */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+
+            .w3-quarter img {
+                width: 100%;
+                border-radius: 8px;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+                .w3-quarter img:hover {
+                    opacity: 0.7; /* Adjust the opacity value as needed */
+                }
+
+        h1, h3 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .section-header {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+            .section-header::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 60px;
+                height: 5px;
+                background: #f82249;
+                bottom: 0;
+                left: calc(50% - 25px);
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .section-header p {
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                font-size: 18px;
+                font-weight: 500;
+                color: #9195a2;
+            }
+    </style>
+
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <div class="slider">
+        <img id="img-1" src="~/img/concertmain12.jpg" alt="Image 1" />
+    </div>
+
+
+
+    <div class="w3-main">
+        <div class=" w3-center" id="events">
+            <div class="section-header">
+                <h2>Concerts</h2>
+            </div>
+            @foreach (var item in Model)
+            {
+                if (item.Tickects==0)
+                {
+                    <div class="w3-quarter">
+                     
+                    <img src="@Url.Content(item.Event_Image)" alt="Image" />
+                        <h3>@item.EventTitle (SOLDOUT)</h3>
+                    <p>The superstar “ADAM”, a memorable night for a live concert that will take you on a journey of togetherness!</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="w3-quarter">
+                        <a asp-action="ticket" asp-route-id="@item.ID"> @item.ID</a>
+                        <img src="@Url.Content(item.Event_Image)" alt="Image" />
+                        <h3>@item.EventTitle </h3>
+                        <p>The superstar “ADAM”, a memorable night for a live concert that will take you on a journey of togetherness!</p>
+                    </div>
+                }
+                
+            }
+        </div>
+    </div>
+
+    <div class="w3-container w3-padding-32" id="projects">
+        
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"></h3>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">25JD</div>
+                <img src="/img/concert1.jpeg" alt="House" style="width:100%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">35JD</div>
+                <img src="/img/concert2.jpeg" alt="House" style="width:100%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">FREE</div>
+                <img src="/img/concert5.jpeg" alt="House" style="width:100%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">35JD</div>
+                <img src="/img/concert9.jpeg" alt="House" style="width:100%">
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">10JD</div>
+                <img src="/img/concert7.jpeg" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">15JD</div>
+                <img src="/img/concert6.jpeg" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">200JD</div>
+                <img src="/img/concert10.jpeg" alt="House" style="width:99%">
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">175JD</div>
+                <img src="/img/concert8.jpeg" alt="House" style="width:99%">
+            </div>
+        </div>
+
+    </div>
+    
+
+
+    
+    
+</body>
+</html>
+

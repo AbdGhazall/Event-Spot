@@ -1,0 +1,99 @@
+﻿@inject IHttpContextAccessor Accessor
+@model TestGp.Models.Login
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Form</title>
+    <style>
+        .inthe {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: white;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+            .login-container input {
+                width: 100%;
+                padding: 12px;
+                margin: 10px 0;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                outline: none;
+            }
+
+            .login-container button {
+                width: 100%;
+                padding: 12px;
+                background: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+
+                .login-container button:hover {
+                    background: #2980b9;
+                }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <div class="inthe">
+    <div class="login-container">
+        <h2 style="color: #333;">Login</h2>
+            <img src="~/img/Logo.PNG" alt="Bootstrap" width="180" height="100">
+        <form id="loginForm" method="post" asp-action="Login2">
+            <input asp-for="Email" type="text" id="Email" name="Email" placeholder="Email" required>
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <input asp-for="Password" type="password" id="password" name="password" placeholder="Password" required>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            <button type="submit">Login</button>
+        </form>
+        <p class="error-message" id="errorMessage"> </p>
+    </div>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                document.getElementById("errorMessage").innerText = "Please enter both username and password.";
+                return false;
+            }
+
+            // Additional validation or checks can be added here
+
+            // Clear error message if validation passes
+            document.getElementById("errorMessage").innerText = "";
+
+            return true;
+        }
+    </script>
+</body>
+</html>

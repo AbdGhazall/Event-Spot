@@ -1,0 +1,90 @@
+﻿@model TestGp.Models.OrganizerRegister
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .containerr {
+            background-color: #ffffff;
+            margin-top: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .personal-info {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    @Html.Partial("_Header2")
+</header>
+
+    <div class="containerr">
+        <h1>Edit Profile</h1>
+        <hr>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+            </div>
+
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+                <h3>Personal info</h3>
+                <form class="form-horizontal" role="form" method="post">
+                    <div class="form-group">
+                        <label asp-for="Ornganization_Name" class="col-lg-3 control-label">First Name:</label>
+                        <div class="col-lg-8">
+                            <input asp-for="Ornganization_Name" class="form-control" type="text" placeholder="Organizatio name">
+                            <span asp-validation-for="Ornganization_Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="col-lg-3 control-label">Last Name:</label>
+                        <div class="col-lg-8">
+                            <input asp-for="Email" class="form-control" type="text" placeholder="Email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Organization_PhoneNumber" class="col-lg-3 control-label">Username</label>
+                        <div class="col-lg-8">
+                            <input asp-for="Organization_PhoneNumber" class="form-control" type="text" placeholder="phone number">
+                            <span asp-validation-for="Organization_PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <label asp-for="Password" class="col-lg-3 control-label">Password</label>
+                        <div class="col-lg-8">
+                            <input asp-for="Password" class="form-control" type="password" placeholder="Password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-3 col-lg-8">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

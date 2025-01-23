@@ -1,6 +1,109 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+
+@inject IHttpContextAccessor Accessor
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* Add this to your existing styles */
+        .navbar-nav .nav-link {
+            color: white;
+            transition: 0.3s;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: red;
+                transform: scale(1.1); /* Optional: Add scaling effect on hover */
+            }
+
+
+        /*FOOTER*/
+        .footer-dark {
+            padding: 50px 0;
+            color: black;
+            background-color: white;
+            margin-top: 100px;
+        }
+
+            .footer-dark h3 {
+                margin-top: 0;
+                margin-bottom: 12px;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            .footer-dark ul {
+                padding: 0;
+                list-style: none;
+                line-height: 1.6;
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+
+                .footer-dark ul a {
+                    color: inherit;
+                    text-decoration: none;
+                    opacity: 0.6;
+                }
+
+                    .footer-dark ul a:hover {
+                        opacity: 0.8;
+                    }
+
+
+
+            .footer-dark .item.text {
+                margin-bottom: 36px;
+            }
+
+
+
+                .footer-dark .item.text p {
+                    opacity: 0.6;
+                    margin-bottom: 0;
+                }
+
+            .footer-dark .item.social {
+                text-align: center;
+            }
+
+
+
+                .footer-dark .item.social > a {
+                    font-size: 20px;
+                    width: 36px;
+                    height: 36px;
+                    line-height: 36px;
+                    display: inline-block;
+                }
+        /*END OF FOOTER*/
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginButtonNavbar = document.querySelector(".login-button-navbar");
+            loginButtonNavbar.addEventListener("click", function () {
+                loginButtonNavbar.style.transition = "background-color 0.9s";
+                loginButtonNavbar.style.backgroundColor = "darkturquoise";
+            });
+        });
+        const dropdown = document.querySelector('#navbarDropdown');
+        dropdown.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TestGp</title>
@@ -9,38 +112,50 @@
     <link rel="stylesheet" href="~/TestGp.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TestGp</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+   
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    <div class="footer-dark">
+        <footer>
+            <hr />
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="/home/eventt">Event</a></li>
+                            <li><a href="/home/Discover">Discover Jordan</a></li>
+                            <li><a href="/home/Experience">Experience</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>EventSpot</h3>
+                        <p>At EventSpot, we specialize in turning moments into memories. Our passion lies in creating meticulously planned and flawlessly executed events that leave a lasting impression. From intimate gatherings to grand celebrations, our dedicated team of event experts is committed to bringing your vision to life. Elevate your occasions with EventSpot - where every detail matters, and every moment is a masterpiece.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">EventSpot © 2024</p>
+            </div>
+        </footer>
+    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - TestGp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    @* <footer class="border-top footer text-muted">
+    <div class="container">
+    &copy; 2023 - TestGp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

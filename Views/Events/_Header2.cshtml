@@ -1,0 +1,94 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@inject IHttpContextAccessor Accessor
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Concerts & Events</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        .navbar-nav .nav-link {
+            color: white;
+            transition: 0.3s;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: red;
+                transform: scale(1.1); /* Optional: Add scaling effect on hover */
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+
+
+                <a ><img src="~/img/Logo.png" alt="Bootstrap" width="80" height="40"></a>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+
+                            @if (Accessor.HttpContext.Session.Keys.Any())
+                            {
+
+
+                            <li class="nav-item dropdown">
+
+
+
+                                <a class="nav-link dropdown-toggle"
+                                   href="#" id="usernameDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    <i class="bi bi-person-fill">@Accessor.HttpContext.Session.GetString("s3") </i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="usernameDropdown">
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Events" asp-action="Orgeditprof">Profile</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Home" asp-action="Logout">Logout</a>
+                                    </li>
+
+                                </ul>
+
+
+                            </li>
+
+                            }
+                            else
+                            {
+                            <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Login2">Login</a>
+                            <a class="btn btn-primary" asp-controller="Home" asp-action="Signup">SignUp</a>
+                            }
+
+                        </li>
+                    </ul>
+                    </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Events" asp-action="CreateEvent">Create Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Events" asp-action="Dashboard">Dashboard</a>
+                        </li>
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+</body>
+</html>

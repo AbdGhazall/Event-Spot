@@ -124,6 +124,9 @@
 
             }
     </style>
+    <header>
+        @Html.Partial("_Header")
+    </header>
     <form method="post" id="signUp-container">
         <h2>@ViewData["Title"]</h2>
 
@@ -132,10 +135,10 @@
             @Html.LabelFor(m=>m.First_Name)@Html.TextBoxFor(m=>m.First_Name)
 
 
-            @Html.LabelFor(m=>m.Last_Name)@Html.TextBoxFor(m=>m.Last_Name)
+        @Html.LabelFor(m=>m.Last_Name) @Html.TextBoxFor(m=>m.Last_Name)
 
 
-            @Html.LabelFor(m=>m.Username)@Html.TextBoxFor(m=>m.Username)
+        @Html.LabelFor(m=>m.Username)@Html.TextBoxFor(m=>m.Username)
 
 
             @Html.LabelFor(m=>m.Email)@Html.TextBoxFor(m=>m.Email)

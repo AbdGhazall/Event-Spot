@@ -1,0 +1,134 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: white;
+        }
+
+        .containerr {
+            display: flex;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(to right, #fcfcfc, #e0e0e0);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            flex: 1;
+        }
+
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+
+        .event-details {
+            flex: 1;
+            padding-left: 40px; /* Adjusted padding to create more space */
+        }
+
+        .event-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .description {
+            margin-bottom: 20px; /* Increased margin for more space */
+            color: #666;
+        }
+
+        .details-box {
+            background: linear-gradient(to right, #fff, #f9f9f9);
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+            .details-box:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .details-box p {
+                margin: 0;
+                padding: 8px 0;
+                color: #555;
+            }
+
+
+        .button {
+            width: 140px;
+            height: 45px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+
+            .button:hover {
+                background-color: #2EE59D;
+                box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+                color: #fff;
+                transform: translateY(-7px);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <div class="containerr">
+        <div class="image-container">
+            <img src="/img/adam.jpeg" alt="Adam Concert">
+        </div>
+        <div class="event-details">
+            <div class="event-name">Liali Al-Saif</div>
+            <div class="description">
+                <p>The superstar “ADAM”, a memorable night for a live concert that will take you on a journey of togetherness!</p>
+            </div>
+            <div class="details-box">
+                <p><strong> Date:</strong> January 15, 2024 </p>
+                <p><strong> Time:</strong> 7:00 PM</p>
+            </div>
+            <div class="details-box">
+                <p><strong>Location:</strong> Exit Club, Amman</p>
+                <p><strong>Number of Tickets:</strong> 100</p>
+                <p><strong>Price per Ticket:</strong> 20 JD</p>
+            </div>
+
+            <div class="wrap">
+                <!-- Use a form with the action attribute set to the destination page URL -->
+                <form asp-controller="Home" asp-action="Booking">
+                    <button type="submit" class="button">Book Now</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

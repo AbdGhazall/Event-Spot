@@ -1,0 +1,127 @@
+﻿@inject IHttpContextAccessor Accessor
+<html>
+
+
+<style>
+    body {
+        background: white;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #BA68C8
+    }
+
+    .profile-button {
+        background: blue; /* Change to your desired blue color */
+        box-shadow: none;
+        border: none;
+        color: #fff; /* Set text color to white */
+    }
+
+        .profile-button:hover {
+            background: #007bff; /* Change to your desired hover color */
+            box-shadow: none;
+        }
+
+        .profile-button:focus {
+            background: #007bff;
+            box-shadow: none;
+        }
+
+        .profile-button:active {
+            background: #007bff;
+            box-shadow: none;
+        }
+
+  
+
+    input[type="file"] {
+        font-size: 8px; /* Adjust the font size as needed */
+        padding: 10px; /* Adjust the padding as needed */
+        background-color: #ecf0f1; /* Background color */
+        color: #555; /* Text color */
+        cursor: pointer; /* Change cursor on hover */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s ease; /* Smooth background color transition */
+    }
+
+        input[type="file"]:hover {
+            background-color: #d5e8f9; /* Lighter background color on hover */
+        }
+
+        /* Style for the "No file chosen" text */
+        input[type="file"]::placeholder {
+            color: #999; /* Adjust the color as needed */
+        }
+</style>
+
+
+
+
+
+<body>
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="text-right">Profile Settings</h2>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="Jack Sparrow" value=""></div>
+
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="ex(+962 7xxxxxxx)" value=""></div>
+                        <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="example@example.com" value=""></div>
+                        <div class="col-md-12"><label class="labels">Current Password</label><input type="text" class="form-control" placeholder="" value=""></div>
+                        <div class="col-md-12"><label class="labels">New Password</label><input type="text" class="form-control" placeholder="" value=""></div>
+                        <div class="col-md-12"><label class="labels">Confirm Password</label><input type="text" class="form-control" placeholder="" value=""></div>
+                    </div>
+
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="col-md-12">
+                        <div class="col-md-12" style="border: 2px solid #c5d4db; border-radius: 8px; padding: 15px; background-color: #faf6f6; color:#465d7c">
+                            <label class="labels" style="font-size: 18px;">Rageb Event - Jarash  <br />Reservations num : <span style="color: #3498db;">#5658974485</span></label>
+                        </div><br />
+
+
+                        <div class="col-md-12" style="border: 2px solid #c5d4db; border-radius: 8px; padding: 15px; background-color: #faf6f6; color:#465d7c">
+                            <label class="labels" style="font-size: 18px;">Rageb Event - Jarash  <br />Reservations num : <span style="color: #3498db;">#5996663255</span></label>
+                        </div><br />
+
+                        <div class="col-md-12" style="border: 2px solid #c5d4db; border-radius: 8px; padding: 15px; background-color: #faf6f6; color:#465d7c">
+                            <label class="labels" style="font-size: 18px;">Amman-Aqaba - Trip  <br />Reservations num : <span style="color: #3498db;">#5969964224</span></label>
+                        </div><br />
+
+                        <div class="col-md-12" style="border: 2px solid #c5d4db; border-radius: 8px; padding: 15px; background-color: #faf6f6; color:#465d7c">
+                            <label class="labels" style="font-size: 18px;">Diving - Aqaba  <br />Reservations num : <span style="color: #3498db;">#5112488894</span></label>
+                        </div><br />
+
+                        <div class="col-md-12" style="border: 2px solid #c5d4db; border-radius: 8px; padding: 15px; background-color: #faf6f6; color:#465d7c">
+                            <label class="labels" style="font-size: 18px;">Silawy Event - Amman  <br />Reservations num : <span style="color: #3498db;">#5658974487</span></label>
+                        </div><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

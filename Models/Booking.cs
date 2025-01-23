@@ -7,21 +7,35 @@ namespace TestGp.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
-        [Required]
         public int BookingID { get; set; }
+
         [Required]
         public string First_Name { get; set; }
+
         [Required]
         public string Last_Name { get; set; }
+
         [Required]
         [DataType(DataType.PhoneNumber)]
-        public string PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
+
         [Required]
-       
         [DataType(DataType.EmailAddress)]
         public string EmailAdress { get; set; }
+
         [Required]
-        public int NumberOfTickets {  get; set; }   
-    
+        public int NumberOfTickets { get; set; }
+
+        [Required]
+        public int UserId { get; set; }
+
+        [Required]
+        public string Event_Title { get; set; }
+
+        [Required]
+        public DateTime EventDate { get; set; }
+
+        [Required]
+        public int Tickets { get; set; }
     }
 }

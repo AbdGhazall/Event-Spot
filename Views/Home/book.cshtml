@@ -1,0 +1,161 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@inject IHttpContextAccessor Accessor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Reservation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-GLhlTQ8i7uZfKtIF9zBfbzpF5+P6L4N2BDmO6YbHaWigpQQGCB46QD5L5DO2Gih" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .animated-background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+            animation: animateBackground 15s linear infinite;
+            background: linear-gradient(-45deg, #3498db, #2ecc71, #3498db, #2ecc71);
+            background-size: 400% 400%;
+        }
+
+        @@keyframes animateBackground {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: 400% 400%;
+            }
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 350px;
+            max-width: 100%;
+            transition: transform 0.3s;
+        }
+
+            .card:hover {
+                transform: scale(1.05);
+            }
+
+        .card-header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+            .card-header i {
+                font-size: 36px;
+            }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                color: #333;
+                font-weight: bold;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                margin-top: 5px;
+                transition: border-color 0.3s;
+            }
+
+                .form-group input:focus {
+                    outline: none;
+                    border-color: #3498db;
+                }
+
+                .form-group input[type="number"]::-webkit-inner-spin-button,
+                .form-group input[type="number"]::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+        .ticket-info {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+        }
+
+            .ticket-info span {
+                font-weight: bold;
+                color: #3498db;
+            }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <div class="animated-background"></div>
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-ticket-alt"></i>
+            <h1>Booking Reservation</h1>
+        </div>
+
+        <div class="card-body">
+            <div class="form-group">
+                <label for="fullName"><i class="fas fa-user"></i> Full Name *</label>
+                <input type="text" id="fullName" placeholder="Your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email *</label>
+                <input type="email" id="email" placeholder="Your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmEmail"><i class="fas fa-envelope"></i> Confirm Email *</label>
+                <input type="email" id="confirmEmail" placeholder="Confirm email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numberOfTickets"><i class="fas fa-ticket-alt"></i> Number of Tickets *</label>
+                <input type="number" id="numberOfTickets" placeholder="Number of tickets" required>
+            </div>
+
+            <div class="ticket-info">
+                <span>Total Price $: [Auto-calculated]</span>
+            </div>
+
+            <p class="footer-text">Note: Total price will be calculated based on the number of tickets.</p>
+        </div>
+    </div>
+</body>
+</html>

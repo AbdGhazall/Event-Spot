@@ -1,163 +1,114 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Join as Client or Freelancer</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        
-        
-
-            html {
-  height:100%;
-}
-
-body {
-  margin:0;
-}
-
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
-
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
-
-.content {
-  background-color:rgba(255,255,255,.8);
-  border-radius:.25em;
-  box-shadow:0 0 .25em rgba(0,0,0,.25);
-  box-sizing:border-box;
-  left:50%;
-  padding:10vmin;
-  position:fixed;
-  text-align:center;
-  top:50%;
-  transform:translate(-50%, -50%);
-}
-
-h1 {
-  font-family:monospace;
-}
-
-@@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
-}
-
-
-
-        .nono {
-            color: black;
-        }
-
-        .container {
+        bodyy {
             
-            color: white;
-            width: 100%;
-            margin: 100px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-             border-radius: 5px;
-           
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        .options {
+            margin: 0;
+            font-family: Arial, sans-serif;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
         }
 
-        .option {
-            width: 45%;
-            padding: 10px;
-            border: 1px solid #ccc;
-             border-radius: 5px;
+        
+
+		.main-containerr {
+			margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            padding: 60px;
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .containerr {
+            border: 2px solid red; /* Use red color for borders */
+            width: 48%;
+            padding: 40px;
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            color: red;
             text-align: center;
         }
 
-            .option h2 {
-                margin-bottom: 10px;
-            }
-
-
-
-      
+        .sub-containerr {
+            text-align: center;
+            padding: 20px;
+        }
 
         .button {
-            width: 140px;
-            height: 45px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            font-weight: 500;
-            color: #000;
-            background-color: crimson;
-            border: none;
-            border-radius: 45px;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease 0s;
-            cursor: pointer;
-            outline: none;
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: black; /* Use black color for buttons */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 20px;
+            transition: background-color 0.3s;
         }
 
             .button:hover {
-                background-color: #2EE59D;
-                box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-                color: #fff;
-                transform: translateY(-7px);
+                background-color: #333; /* Darken the color on hover */
             }
+
+        .login-section {
+            margin-top: -50px;
+            text-align: center;
+        }
+
+        .login-link {
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .login-link:hover {
+                text-decoration: underline;
+            }
+
+
     </style>
-    <div class="nono">
-        <h1>Join as a client or freelancer</h1>
-        <div class="options">
-            <div class="option client">
-                <h2>I'm a client, hiring for a project</h2>
-                
-                <form asp-controller="Home" asp-action="Register">
-                    <button class="button">Create Account</button>
-                </form>
-            </div>
-            <div class="option freelancer">
-                <h2>I'm an EventCreator</h2>
-                <button>Create Account</button>
+    <title>Create Account</title>
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <div class="bodyy">
+
+ 
+
+    <div class="main-containerr">
+        <div class="containerr">
+            <div class="title">I'm an Event Creator</div>
+            <div class="sub-containerr">
+                <br /><br />
+                    <a href="/Events/OrganizerRegister" class="button">Sign Up</a>
             </div>
         </div>
-        <p class="login-link">Already have an account? <a href="/Home/Login">Log In</a></p>
+
+        <div class="containerr" style="margin-left: 20px;">
+            <div class="title">I'm a Guest looking for an Event</div>
+            <div class="sub-containerr">
+                    <a href="/Home/Register" class="button">Sign Up</a>
+            </div>
+        </div>
     </div>
-
-
-
-
-
-
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-  
+	</div>
+    <div class="login-section">
+        <p>Already have an account? <a href="/Home/Login2" class="login-link">Log In</a></p>
+    </div>
+    
 </body>
 </html>
-

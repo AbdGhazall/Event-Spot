@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+
+
+
+        .opa {
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+            .opa img {
+                width: 100%;
+                border-radius: 8px;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+                .opa img:hover {
+                    opacity: 0.7; /* Adjust the opacity value as needed */
+                }
+
+        #workshops {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .workshop {
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+        }
+
+            .workshop img {
+                width: 100%;
+                height: auto;
+            }
+
+            .workshop p {
+                margin-top: 10px;
+            }
+
+        .section-header {
+            margin-top: 100px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+            .section-header::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 60px;
+                height: 5px;
+                background: #f82249;
+                bottom: 0;
+                left: calc(50% - 25px);
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .section-header p {
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                font-size: 18px;
+                font-weight: 500;
+                color: #9195a2;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+        <img class="w3-image" src="/img/workshop.jpg" alt="Scuba Diving" width="1600" height="800">
+
+    </header>
+    <div class=" w3-center" id="events">
+        <div class="section-header">
+            <h2>workshops</h2>
+        </div>
+    </div>
+    <div id="workshops">
+
+        <div class="workshop">
+            <div class="opa">
+            <img src="~/img/workshop8.jpg" alt="Workshop 1">
+            <p>Step into the future with our technology showcase. From AI wonders to sleek gadgets, experience the cutting edge. Join us for a glimpse into the digital frontier – where innovation meets life. Don't miss the journey into tomorrow!"</p>
+        </div>
+        </div>
+        <div class="workshop">
+            <div class="opa">
+            <img src="~/img/workshop7.jpg" alt="Workshop 2">
+            <p>Embark on a journey through innovation at our technology event. From AI marvels to sleek gadgets, witness the next wave of progress. Explore the digital frontier and shape your tomorrow. Don't miss out on the tech revolution – your future awaits!"</p>
+        </div>
+        </div>
+        <div class="workshop">
+            <div class="opa">
+            <img src="~/img/workshop5.jpg" alt="Workshop 3">
+            <p>
+                Join us for a visual journey at our photography event. From captivating landscapes to discover the art of storytelling through the lens. Unleash your creativity and capture moments that last a lifetime. Don't miss this snapshot of inspiration!"
+            </p>
+        </div>
+        </div>
+        <div class="workshop">
+                <div class="opa">
+            <img src="~/img/workshop4.png" alt="Workshop 4">
+            <p>Join us for a celebration of design excellence. From sleek graphics to groundbreaking concepts, witness the evolution of creativity. Explore and break boundaries, and be inspired to craft your visual narrative. Don't miss this it!"</p>
+        </div>
+            </div>
+        <div class="workshop">
+                    <div class="opa">
+            <img src="~/img/workshop3.png" alt="Workshop 1">
+            <p>Join our summit for a dive into global opportunities. Explore emerging markets, sustainable growth, and the keys to international success. Connect, learn, and shape the future of global prosperity. Don't miss out on this journey!"</p>
+        </div>
+                </div>
+        <div class="workshop">
+                        <div class="opa">
+            <img src="~/img/workshop2.png" alt="Workshop 2">
+            <p>Step into the world of business brilliance at our event. From cutting-edge strategies to powerful connections, explore the essentials for success. Join us for insights, networking, and practical tools to propel your business forward.</p>
+        </div>
+                    </div>
+        <div class="workshop">
+                            <div class="opa">
+            <img src="~/img/workshop6.jpg" alt="Workshop 3">
+            <p>Discover the keys to business excellence at our event. From innovative strategies to effective networking, unlock the secrets to success. Join us for valuable insights, connections, and practical tools to elevate your business to new heights</p>
+        </div>
+                        </div>
+        <div class="workshop">
+                                <div class="opa">
+            <img src="~/img/workshop10.png" alt="Workshop 4">
+            <p>
+                
+                Dive into the art of design at our event. From bold aesthetics to innovative concepts, explore the elements shaping creative excellence. Join us for inspiration, connections, and a hands-on journey through the world of design. Don't miss this chance to amplify your creative vision!"
+            </p>
+                                </div>
+                            </div>
+
+    </div>
+
+</body>
+</html>

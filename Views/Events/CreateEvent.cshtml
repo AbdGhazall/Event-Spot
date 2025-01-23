@@ -1,0 +1,193 @@
+﻿@model Event
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Event</title>
+
+
+</head>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h4 {
+        color: #007bff;
+        text-align: center;
+    }
+
+    
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    select,
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: url('data:image/svg+xml;utf8,<svg fill="%231b6ec2" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat right 10px center;
+        background-size: 20px;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    .text-danger {
+        color: #dc3545;
+        margin-top: 5px;
+    }
+
+    hr {
+        border: 1px solid #ced4da;
+        margin: 20px 0;
+    }
+</style>
+<body>
+    <header>
+        @Html.Partial("_Header2")
+    </header>
+
+<h1>Create</h1>
+
+<h4>Event</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateEvent" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="EventTitle" class="control-label"></label>
+                <input asp-for="EventTitle" class="form-control" />
+                <span asp-validation-for="EventTitle" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                    <label asp-for="Tags" class="control-label">Description</label>
+                <input asp-for="Tags" class="form-control" />
+                <span asp-validation-for="Tags" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label asp-for="Type" class="control-label">   </label>
+                    <select asp-for="Type" asp-items="Html.GetEnumSelectList<Types>()" class="form-control">select</select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+                
+            <div class="form-group">
+                <label asp-for="DateAndTime" class="control-label"></label>
+                <input asp-for="DateAndTime" class="form-control" />
+                <span asp-validation-for="DateAndTime" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label asp-for="Link" class="control-label">Location </label>
+                    <input asp-for="Link" class="form-control" />
+                    <span asp-validation-for="Link" class="text-danger"></span>
+                </div>
+            <div class="form-group">
+                <label asp-for="Link" class="control-label">Location Link</label>
+                <input asp-for="Link" class="form-control" />
+                <span asp-validation-for="Link" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label asp-for="Type" class="control-label">On-Site</label>
+                    <select asp-for="Type" asp-items="Html.GetEnumSelectList<OPlace>()" class="form-control">select</select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+            <div class="form-group">
+                <label asp-for="Place" class="control-label"></label>
+                    <select asp-for="Type" asp-items="Html.GetEnumSelectList<EvPlace>()" class="form-control">select</select>
+                <span asp-validation-for="Place" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tickects" class="control-label"></label>
+                <input asp-for="Tickects" class="form-control" />
+                <span asp-validation-for="Tickects" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <label asp-for="Tickects" class="control-label">Price</label>
+                <input asp-for="Tickects" class="form-control" />
+                <span asp-validation-for="Tickects" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <div class="form-group">
+                    <label for="Photo">Photo</label>
+                    <input asp-for="Event_Image" type="file" id="Event_Image" name="photo" class="form-control">
+                    <span asp-validation-for="Event_Image" class="text-danger"></span>
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+</body>
+</html>

@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+@model List<Event>
+
+
+
+<!doctype html>
+<html lang="en">
+<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <style>
+        .pac1 {
+            text-align: center;
+        }
+
+        .form-group{
+            padding-top: 0px;
+            padding-right: 100px;
+            padding-bottom: 0px;
+            padding-left: 1150px;
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sectext {
+            font-family: URW Chancery L, cursive;
+            text-align: center;
+        }
+
+        .imgg {
+            width: 300px;
+            height: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            object-fit: cover;
+        }
+
+
+        .scuba-diving-course {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items:center;
+            margin: 50px 0;
+        }
+
+        .scuba-diving-experience {
+            width: 20%;
+            margin: 10px;
+            text-align: left;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+            .scuba-diving-experience img {
+                max-width: 100%;
+                height: auto;
+                overflow: hidden;
+            }
+
+            .scuba-diving-experience h2 {
+                font-size: 24px;
+                margin-top: 10px;
+                overflow: hidden;
+            }
+
+            .scuba-diving-experience p {
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+
+
+        .special-word {
+            color: grey;
+            font-family: Gill Sans, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            width: 80px;
+            height: 45px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+
+            .button:hover {
+                background-color: #2EE59D;
+                box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+                color: #fff;
+                transform: translateY(-7px);
+            }
+
+       
+
+        .word2 {
+            text-align: center
+        }
+
+    </style>
+   
+    <main>
+        <header>
+            @Html.Partial("_Header2")
+        </header>
+        <h2>Welcome Back <u></u></h2>
+        <form asp-action="CreateEvent" method="post">
+            <div class="form-group">
+                <input type="submit" value="CreateEvent" class="btn btn-primary" />
+            </div>
+        </form>
+      
+        
+        
+
+
+        <h1 class="word2">Your Events</h1>
+
+        <section class="scuba-diving-course">
+         @foreach (var item in Model)
+        {  
+            
+            
+                <div class="scuba-diving-experience">
+                    <img class="imgg" src="@Url.Content(item.Event_Image)" alt="House" style="width:100%">
+               
+                    <br />
+                    <br />
+             
+                    <h6><span class='special-word'> @item.EventTitle  </span> @item.EventTitle</h6>
+
+                    <hr />
+                    
+                    <div class="wrap">
+                        <!-- Use a form with the action attribute set to the destination page URL -->
+                      
+                            <a asp-action="EditEvent" asp-route-id="@item.ID"><button type="submit" class="button">Edit</button></a>
+
+
+                        <form   asp-action="DeleteEvent" method="post">
+                            <input type="hidden" name="id" value="@item.ID" />
+                            <button type="submit" class="button">Delete</button>
+                            </form>
+
+
+                    </div>
+                
+                </div>
+           
+                
+            }
+        </section>
+        
+        </main>
+</body>
+</html>

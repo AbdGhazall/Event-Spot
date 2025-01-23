@@ -1,0 +1,156 @@
+﻿@model TestGp.Models.OrganizerRegister
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" type="text/css" href="~/css/signUpCss/SignUp.css" />
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: white;
+        }
+
+        #signUp-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+            #signUp-container h2 {
+                text-align: center;
+                color: #333;
+            }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+            input[type="submit"] {
+                background-color: #0171d3;
+                color: #fff;
+                cursor: pointer;
+            }
+
+                input[type="submit"]:hover {
+                    background-color: #0171d3;
+                }
+
+        .form-link {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+            .form-link a {
+                color: #0171d3;
+            }
+
+        .media-options {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+            .media-options a {
+                display: inline-block;
+                text-decoration: none;
+                color: #333;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-right: 8px;
+            }
+
+            .media-options img {
+                vertical-align: middle;
+                margin-right: 8px;
+            }
+
+        
+        
+
+            
+
+       
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .alert-success {
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+            color: #3c763d;
+        }
+
+        .alert .close {
+            float: right;
+            font-size: 19px;
+            line-height: 20px;
+            cursor: pointer;
+            color: #000000;
+            opacity: 0.2;
+        }
+
+            .alert .close:hover {
+                opacity:  1;
+
+            }
+    </style>
+    <header>
+        @Html.Partial("_Header")
+    </header>
+    <form method="post" id="signUp-container"asp-controller="Events" asp-action="OrganizerRegister">
+        <h2>@ViewData["Title"]</h2>
+
+
+
+        @Html.LabelFor(m=>m.Ornganization_Name)@Html.TextBoxFor(m=>m.Ornganization_Name)
+        @Html.LabelFor(m=>m.Organization_PhoneNumber) @Html.TextBoxFor(m=>m.Organization_PhoneNumber)
+        @Html.LabelFor(m=>m.Email)@Html.TextBoxFor(m=>m.Email)
+        @Html.LabelFor(m=>m.Password)@Html.PasswordFor(m=>m.Password)
+
+
+
+           
+     <!--   <label for="gender">Gender</label>
+        <select id="gender" name="gender" >
+            <option value="type">Select Your Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>-->
+
+        
+        <br />
+       
+        <br />
+        <input type="submit" value="SignUp" />
+        @TempData["Error message"]
+        
+
+    </form>
+</body>
+</html>
