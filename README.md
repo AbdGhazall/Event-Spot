@@ -31,7 +31,7 @@ The platform also promotes personal well-being, cultural immersion, and communit
 
 - **Backend Development**: ASP.NET MVC  
 - **Database**: MS SQL Server with Entity Framework  
-- **Development Environment**: Visual Studio Code  
+- **Development Environment**: Visual Studio  
 
 ## 📸 Screenshots
 
