@@ -4,7 +4,7 @@
 
 The platform also promotes personal well-being, cultural immersion, and community growth by connecting users with enriching opportunities worldwide, fostering self-esteem, and supporting the prosperity of local communities.
 
-## ✨ Features
+## 🚀 Features
 
 ### 👤 User Perspective
 
