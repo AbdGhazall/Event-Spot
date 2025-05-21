@@ -4,6 +4,8 @@
 
 The platform also promotes personal well-being, cultural immersion, and community growth by connecting users with enriching opportunities worldwide, fostering self-esteem, and supporting the prosperity of local communities.
 
+---
+
 ## 🚀 Features
 
 ### 👤 User Perspective
@@ -27,11 +29,15 @@ The platform also promotes personal well-being, cultural immersion, and communit
 - **Usability**: User-friendly interface for seamless navigation.  
 - **Maintainability**: Modular design for easy updates and feature additions.  
 
+---
+
 ## 🛠 Technologies Used
 
 - **Backend Development**: ASP.NET MVC  
 - **Database**: MS SQL Server with Entity Framework  
 - **Development Environment**: Visual Studio  
+
+---
 
 ## 📸 Screenshots
 
